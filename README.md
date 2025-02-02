@@ -1,7 +1,7 @@
-install pm2 globally in your system:
+##install pm2 globally in your system:
   -npm i -g pm2
 
-*Run node js application on multiple cores (max cpu cores of your system) in watchmode(any changes made to file causes it to restart the process like nodemon):
+#Run node js application on multiple cores (max cpu cores of your system) in watchmode(any changes made to file causes it to restart the process like nodemon):
   -pm2 start index.js -i max --watch
 
 #Logs and list:
