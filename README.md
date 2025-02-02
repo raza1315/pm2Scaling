@@ -1,17 +1,56 @@
-##install pm2 globally in your system:
-  -npm i -g pm2
+# **PM2 Setup Guide for Node.js Applications**
 
-#Run node js application on multiple cores (max cpu cores of your system) in watchmode(any changes made to file causes it to restart the process like nodemon):
-  -pm2 start index.js -i max --watch
+ # **Installation**
+To install PM2 globally on your system:
+```bash
+npm install -g pm2
+```
 
-#Logs and list:
-  -pm2 logs
-  -pm2 list
 
-#Monitor resource usage (CPU, Memory, etc):
-  -pm2 monit
+## **Running Node.js Application on Multiple CPU Cores**
 
-#Auto restart processes on reboot:
-  -pm2 startup (copy the commands in the terminal and paste them and run.)
-  -pm2 save (makes the pm2 remeber which process to auto start)
+Run the application on the maximum available CPU cores in **watch mode** (automatically restarts on file changes):
+```bash
+pm2 start index.js -i max --watch
+```
+- `-i max`: Runs the app on all available CPU cores.
+- `--watch`: Restarts the app when file changes are detected.
 
+---
+
+## **Viewing Logs and Process List**
+
+- **View Logs:**
+  ```bash
+  pm2 logs
+  ```
+- **List Running Processes:**
+  ```bash
+  pm2 list
+  ```
+
+---
+
+## **Monitor Resource Usage**
+
+To monitor CPU, memory, and other resource usage:
+```bash
+pm2 monit
+```
+
+---
+
+## **Enable Auto-Restart on System Reboot**
+
+1. Enable PM2 to start automatically on reboot:
+   ```bash
+   pm2 startup
+   ```
+   - Follow the on-screen instructions to run the generated command.
+
+2. Save the current process list for auto-restart:
+   ```bash
+   pm2 save
+   ```
+
+---
